@@ -13,3 +13,5 @@ Invoke-RestMethod -Uri $scriptUrl -OutFile $localScriptPath
 
 # Execute the downloaded .cmd script
 Start-Process -FilePath "cmd.exe" -ArgumentList "/c $localScriptPath" -Wait
+
+Remove-Item -Path $localScriptPath -Force
