@@ -12,6 +12,6 @@ $localScriptPath = "$env:TEMP\irmexectest.cmd"
 Invoke-RestMethod -Uri $scriptUrl -OutFile $localScriptPath
 
 # Execute the downloaded .cmd script
-Start-Process -FilePath "cmd.exe" -ArgumentList "/c $localScriptPath" -Wait
+Start-Process -FilePath "cmd.exe" -ArgumentList "/k $localScriptPath" -Wait
 
 Remove-Item -Path $localScriptPath -Force
