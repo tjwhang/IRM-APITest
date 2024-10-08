@@ -3,7 +3,7 @@
 echo "Downloading script at env:temp"
 
 # URL to the raw .cmd script on GitHub
-$scriptUrl = ""
+$scriptUrl = "https://raw.githubusercontent.com/tjwhang/IRM-APITest/refs/heads/main/code/main.cmd"
 
 # Path to save the downloaded script locally
 $localScriptPath = "$env:TEMP\irmexectest.cmd"
