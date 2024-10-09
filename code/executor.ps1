@@ -1,15 +1,16 @@
 # PowerShell script to download and execute a .cmd script from GitHub
-@echo off
 
 echo "Downloading script at env:temp"
 
-where node >nul 2>nul
-if %ERRORLEVEL% equ 0 (
-    echo Node.js is installed.
+try {
+    # Try to get the Node.js command
+    $nodeCommand = Get-Command node -ErrorAction Stop
+    Write-Host "Node.js is installed."
+    # Get the Node.js version
     node -v
-) else (
-    echo Node.js is not installed.
-)
+} catch {
+    Write-Host "Node.js is not installed."
+}
 
 
 # URL to the raw .cmd script on GitHub
