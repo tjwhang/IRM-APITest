@@ -8,6 +8,7 @@ try {
     $nodeCommand = Get-Command node -ErrorAction Stop
     Write-Host "Node.js is installed."
     # Get the Node.js version
+    Write-Host "Node.JS version: "
     node -v
 } catch {
     Write-Host "Node.js is not installed. Installing... Please agree to the context menus"
