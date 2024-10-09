@@ -10,7 +10,7 @@ try {
     # Get the Node.js version
     node -v
 } catch {
-    Write-Host "Node.js is not installed. Installing... Please "
+    Write-Host "Node.js is not installed. Installing... Please agree to the context menus"
     winget install OpenJS.NodeJS
 }
 
