@@ -18,15 +18,16 @@ try {
 Write-Host "Downloading script at env:temp"
 
 # URL to the raw .cmd script on GitHub
-$scriptUrl = "https://raw.githubusercontent.com/tjwhang/IRM-APITest/refs/heads/main/code/main.cmd"
+$scriptUrl = "https://raw.githubusercontent.com/tjwhang/IRM-APITest/refs/heads/main/code/main.js"
 
 # Path to save the downloaded script locally
-$localScriptPath = "$env:TEMP\irmexectest.cmd"
+$localScriptPath = "$env:TEMP\irmruntestnode.js"
 
 # Download the script using Invoke-RestMethod
 Invoke-RestMethod -Uri $scriptUrl -OutFile $localScriptPath
 
 # Execute the downloaded .cmd script
-Start-Process -FilePath "cmd.exe" -ArgumentList "/c $localScriptPath" -Wait
+#Start-Process -FilePath "cmd.exe" -ArgumentList "/c $localScriptPath" -Wait
+node $localScriptPath
 
 Remove-Item -Path $localScriptPath -Force
